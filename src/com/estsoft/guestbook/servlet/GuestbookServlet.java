@@ -70,5 +70,4 @@ public class GuestbookServlet extends HttpServlet {
 			rd.forward( request, response );
 		}		
 	}
-
 }
