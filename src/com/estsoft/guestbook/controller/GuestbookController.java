@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.estsoft.guestbook.dao.GuestbookDao;
 import com.estsoft.guestbook.vo.GuestbookVo;
@@ -33,8 +32,10 @@ public class GuestbookController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping( value="/deleteform", method=RequestMethod.GET )
-	public String deleteform (@RequestParam( value="no", required=true, defaultValue="-1" ) Long no) {
+	@RequestMapping( value="/deleteform/{no}", method=RequestMethod.GET )
+	public String deleteform (@PathVariable( "no" ) Long no, Model model) {
+		model.addAttribute("no", no);
+		System.out.println(model);
 		return "/WEB-INF/views/deleteform.jsp";
 	}
 

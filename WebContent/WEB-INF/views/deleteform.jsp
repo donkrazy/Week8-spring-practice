@@ -5,7 +5,7 @@
 <title>방명록</title>
 </head>
 <body>
-	<form method="post" action="delete/${param.no }">
+	<form method="post" action="/delete/${no }">
 	<table>
 		<tr>
 			<td>비밀번호</td>
